@@ -1,0 +1,10 @@
+{
+  "name": "docker-deployer",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Simple docker deployer",
+  "author": "Jim Reed",
+  "dependencies": {
+    "express": "3.2.4"
+  }
+}
