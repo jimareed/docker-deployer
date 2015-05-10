@@ -5,5 +5,9 @@ var app = express();
 app.get('/', function (req, res) {
   res.send('Hello World\n');
 });
+app.post('/deploy',function(req,res){
+  console.log("Deploy");
+  res.end("yes");
+});
 app.listen(PORT)
 console.log('Running on http://localhost:' + PORT);
