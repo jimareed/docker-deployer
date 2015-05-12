@@ -5,7 +5,7 @@ var DEFAULT_PORT = 8080;
 var PORT = process.env.PORT || DEFAULT_PORT;
 var app = express();
 
-if (exec('echo hello') !== 0) {
+if (exec('docker ps | grep helloworld >t.out') !== 0) {
 	console.log('exec failed');
 } else {
 	console.log('exec success');
