@@ -5,6 +5,7 @@
   "description": "Simple docker deployer",
   "author": "Jim Reed",
   "dependencies": {
-    "express": "3.2.4"
+    "express": "3.2.4",
+    "shelljs": "*"
   }
 }
