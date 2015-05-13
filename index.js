@@ -5,10 +5,6 @@ var DEFAULT_PORT = 9080;
 var PORT = process.env.PORT || DEFAULT_PORT;
 var app = express();
 
-if (shell.exec('./run.sh').code != 0) {
-  console.log('error running script');
-}
-
 app.get('/', function (req, res) {
   res.send('Hello World\n');
 });
