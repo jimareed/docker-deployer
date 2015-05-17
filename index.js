@@ -5,9 +5,6 @@ var DEFAULT_PORT = 9080;
 var PORT = process.env.PORT || DEFAULT_PORT;
 var app = express();
 
-app.get('/', function (req, res) {
-  res.send('Hello World\n');
-});
 
 app.post('/deploy',function(req,res){
   console.log("Deploy");
