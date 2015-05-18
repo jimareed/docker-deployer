@@ -1,3 +1,3 @@
 forever stop index.js
 git pull
-forever -w start index.js
+forever start -o out.log index.js
