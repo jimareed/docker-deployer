@@ -7,6 +7,8 @@
   "dependencies": {
     "express": "3.2.4",
     "shelljs": "*",
-    "forever": "*"
+    "forever": "*",
+    "log": "*",
+    "fs": "*"
   }
 }
