@@ -1,13 +1,21 @@
 var express = require('express');
+var bodyParser = require("body-parser");
+var app = express();
+
 var shell = require('shelljs');
 
 var DEFAULT_PORT = 9080;
 var PORT = process.env.PORT || DEFAULT_PORT;
-var app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.post('/deploy',function(req,res){
-  console.log('deploy');
-  if (shell.exec('./deploy.sh').code != 0) {
+//  var request = JSON.parse(req);
+  console.log('deploy..');
+  console.log(req.body);
+//  console.log(request.repository.owner);
+//  console.log(request.repository.name);
+  if (shell.exec('./deploy.sh jimareed helloworld').code != 0) {
     console.log('error deploying image');
   }
   res.end("ok");
