@@ -9,10 +9,11 @@ var PORT = process.env.PORT || DEFAULT_PORT;
 
 app.use(bodyParser.json());
 
-app.post('/deploy',function(req,res){
+app.post('/deploy/:port',function(req,res){
   if (shell.exec('./deploy.sh ' + 
                  req.body.repository.owner + ' ' + 
-                 req.body.repository.name).code != 0) {
+                 req.body.repository.name + ' ' +
+                 req.params.port).code != 0) {
     console.log('error deploying image');
   }
   res.end("ok");
