@@ -5,15 +5,17 @@ var app = express();
 var shell = require('shelljs');
 
 var DEFAULT_PORT = 9080;
+var PORT = process.env.PORT || DEFAULT_PORT;
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.post('/deploy',function(req,res){
-  if (shell.exec('./deploy.sh jimareed helloworld').code != 0) {
+  if (shell.exec('./deploy.sh ' + 
+                 req.body.repository.owner + ' ' + 
+                 req.body.repository.name).code != 0) {
     console.log('error deploying image');
   }
   res.end("ok");
-  console.log('body:' + req.body);
 });
 
 app.listen(PORT)
