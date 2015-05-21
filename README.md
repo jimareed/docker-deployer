@@ -1,8 +1,8 @@
 # docker-deployer
 
-simple webhook listener to deploy docker containers.
+Simple webhook listener which will automatically deploy a docker container on <host> running on <port>.  **<host> setup** installs the listener.  **docker hub setup** configures the docker repository to call the listener when a new build is available.
 
-## setup
+## <host> setup
 
 ```
 install node.js
@@ -17,5 +17,5 @@ forever start -o out.log index.js
 
 ```
 add webhook to docker automated build repository:
- http://<host>:9080/deploy
+ http://<host>:9080/deploy/<port>
 ```
