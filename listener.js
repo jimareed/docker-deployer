@@ -9,13 +9,14 @@ var PORT = process.env.PORT || DEFAULT_PORT;
 
 app.use(bodyParser.json());
 
-app.post('/deploy/:port',function(req,res){
+app.post('/deploy/:hostport/:containerport',function(req,res){
   console.log('deploying ' + req.body.repository.owner + '/' + 
               req.body.repository.name + ' at ' + Date().toString());
   if (shell.exec('./deploy.sh ' + 
                  req.body.repository.owner + ' ' + 
                  req.body.repository.name + ' ' +
-                 req.params.port).code != 0) {
+                 req.params.hostport + ' ' + 
+                 req.params.containerport).code != 0) {
     console.log('error deploying ' + req.body.repository.name);
   }
   res.end("ok");
