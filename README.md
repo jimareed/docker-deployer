@@ -1,6 +1,6 @@
 # docker-deployer
 
-Simple webhook listener which will automatically deploy a docker container to {host} running on {port}.  **{host} setup** installs the listener on host server.  **docker hub setup** configures the docker repository to call the listener when a new build is available.
+Simple webhook listener which deploys a docker container to a host when a new build is available.  Follow **{host} setup** instructions to install the listener on the host server.  Follow **docker hub setup** instructions to configure the docker repository to call the listener when a build is ready.
 
 ## {host} setup
 
@@ -17,5 +17,5 @@ forever start -o out.log listener.js
 
 ```
 add webhook to docker automated build repository:
- http://{host}:9080/deploy/{port}
+ http://{host}:9080/deploy/{hostport}/{containerport}
 ```
