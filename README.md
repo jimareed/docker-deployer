@@ -1,8 +1,8 @@
 # docker-deployer
 
-Simple webhook listener which deploys a docker container to a host when a new build is available.  Follow **{host} setup** instructions to install the listener on the host server.  Follow **docker hub setup** instructions to configure the docker repository to call the listener when a build is ready.
+Simple webhook listener which deploys a docker container to a host when a new build is available.  Follow **host setup** instructions to install the listener on the host server.  Follow **docker hub setup** instructions to configure the docker repository to call the listener when a build is ready.
 
-## {host} setup
+## host setup
 
 ```
 install node.js
