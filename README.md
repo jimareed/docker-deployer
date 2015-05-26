@@ -2,6 +2,9 @@
 
 Simple webhook listener which deploys a docker container to a host when a new build is available.  Follow **host setup** instructions to install the listener on the host server.  Follow **docker hub setup** instructions to configure the docker repository to call the listener when a build is ready.
 
+![Alt text](/doc/overview.png "Docker Deployer Overview")
+
+
 ## host setup
 
 ```
