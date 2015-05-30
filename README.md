@@ -8,8 +8,14 @@ Simple webhook listener which deploys a docker container to a host when a new bu
 ## host setup
 
 ```
-install node.js
+sudo -i
+yum install git
+yum install -y docker ; service docker start
+docker login (specify docker hub login info)
+curl -sL https://rpm.nodesource.com/setup | bash -
+yum install -y nodejs
 npm install forever -g
+cd /opt
 git clone https://github.com/jimareed/docker-deployer
 cd docker-deployer
 npm install
@@ -21,4 +27,5 @@ forever start -o out.log listener.js
 ```
 add webhook to docker automated build repository:
  http://{host}:9080/deploy/{hostport}/{containerport}
+select Test to install an initial version of your docker image
 ```
