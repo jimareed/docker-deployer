@@ -29,3 +29,5 @@ add webhook to docker automated build repository:
  http://{host}:9080/deploy/{hostport}/{containerport}
 select Test to install an initial version of your docker image
 ```
+![Alt text](/doc/select-webhooks.png "Select Webhooks")
+![Alt text](/doc/add-webhook.png "Add Webhook")
